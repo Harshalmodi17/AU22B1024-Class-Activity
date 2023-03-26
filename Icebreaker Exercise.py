@@ -29,3 +29,45 @@ Gamma Rays 3 × 10^19 or more
 
 Write a program that reads the frequency of some radiation from the user and
 displays name of the radiation as part of an appropriate message.
+
+#Problem 1
+def wavelength(n):
+    if n in range(380,450):
+        return "The colour light is of Violet Wavelength"
+    elif n in range(450,495):
+        return "The colour of light is of Blue Wavelength"
+    elif n in range(495,570):
+        return "The colour light is of Green Wavelength"
+    elif n in range(570,590):
+        return "The colour light is of Yellow Wavelength"
+    elif n in range(590,620):
+        return "The colour light is of Orange Wavelength"
+    elif n in range(620,750):
+        return "The colour light is of Red Wavelength"
+    elif n<380 or n > 750:
+        return "No visible light in the entered Wavelength"
+
+n = int(input())
+print(wavelength(n))
+
+
+#Problem 2
+def Radiation(n):
+    if n < 3e9:
+        return "The entered frequency is a Radio Wave"
+    elif 3e9 <= n < 3e12:
+        return "The entered frequency is a Microwave"
+    elif 3e12 <= n < 4.3e14:
+        return "The entered frequency is a Infrared Light "
+    elif 4.3e14 <= n < 7.5e14:
+        return "The entered frequency is a Visible Light"
+    elif 7.5e14 <= n < 3e17:
+        return "The entered frequency is a Ultraviolet Light"
+    elif 3e17 <= n < 3e19:
+        return "The entered frequency is a X-Ray"
+    elif n >= 3e19:
+        return "The entered frequency is a Gamma Ray"
+
+n = float(input())
+print(Radiation(n))
+

@@ -24,3 +24,45 @@ If the length of the chat is greater than 200, data consisting of only the first
 (b) How one can check if the restriction is on a number of words rather than letters?
 Write a function that allows a message with only 30 words.
 
+
+#Problem 1
+class shoping:
+    def __init__(self,pn,price,quantity,mem):
+        self.pn = pn
+        self.price = price
+        self.quantity = quantity
+        self.mem = mem
+    def dis(self):
+        if self.mem == "Prime":
+            s = (self.price - 0.23*self.price)*self.quantity
+            return s
+        if self.mem == "Non Prime":
+            s = (self.price - 0.08*self.price)*self.quantity
+            return s
+C1 = shoping("Shoes",2500,3,"Non Prime")
+C1.dis()
+
+#Problem 2(a)
+n = list(input())
+if len(n)<=200:
+    print(*n,end = "")
+if len(n) > 200:
+    print(*n[0:200],end = "")
+
+#Problem 2(b)
+i = input()
+
+words = []
+c = ""
+
+for ch in i:
+    if ch != "," and ch != " ":
+        c = c + ch
+    else:
+        words.append(c)
+        c = ""
+words.append(c)
+if len(words) < 30:
+    print(*words, end=" ")
+else:
+    print("Word Limit Exceeded!!!")

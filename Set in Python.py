@@ -1,3 +1,4 @@
+"""
 sentence = "Hey I am walking here I am walking here o captain my captain water water everywhere nor a drop to drik"
 print(verse, "\n")
 
@@ -12,3 +13,10 @@ print(sentence_set, '\n')
 # print the number of unique words
 num_unique = 
 print(num_unique, '\n')
+"""
+
+sentence = "Hey I am walking here I am walking here o captain my captain water water everywhere nor a drop to drik"
+c = sentence.split(" ")
+x = set(c)
+print(x)
+print(len(x))
