@@ -9,18 +9,53 @@ If the user passes invalid parameters to the constructor method in that case rai
 """
 
 class MedPlus:
-    def __init__(self,name = str,batch = int,price = float):
+    def __init__(self, name: str, batch: int, price: float):
+        try:
+            if type(name) != str:
+                raise TypeError("Name should be a string")
+            if type(batch) != int:
+                raise TypeError("Batch number should be an integer")
+            if type(price) != float:
+                raise TypeError("Price should be a float")
+        except TypeError as e:
+            print(f"Error: {e}")
+            return
         self.name = name
         self.batch = batch
         self.price = price
-    def valid(self):
-        if type(self.name) == str and type(self.batch) == int and type(self.price) == float:
-            return "Valid"
-        else:
-            return "Invalid Input"
-name =input()
-batch = (input())
-price = (input())
-A = MedPlus(name,batch,price)
-print(A.valid())
+        
+    def set_name(self, name: str):
+        try:
+            if type(name) != str:
+                raise TypeError("Name should be a string")
+        except TypeError as e:
+            print(f"Error: {e}")
+            return
+        self.name = name
+        
+    def set_batch(self, batch: int):
+        try:
+            if type(batch) != int:
+                raise TypeError("Batch number should be an integer")
+        except TypeError as e:
+            print(f"Error: {e}")
+            return
+        self.batch = batch
+        
+    def set_price(self, price: float):
+        try:
+            if type(price) != float:
+                raise TypeError("Price should be a float")
+        except TypeError as e:
+            print(f"Error: {e}")
+            return
+        self.price = price
+    def get_name(self):
+        return self.name
+    
+    def get_batch(self):
+        return self.batch
+    
+    def get_price(self):
+        return self.price
         
